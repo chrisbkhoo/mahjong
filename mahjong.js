@@ -9,6 +9,15 @@ const suits = ["bamboo", "buckets", "numbers", "winds", "dragon", "flower"];
 const windValues = ["north", "south", "east", "west"];
 const dragonValues = ["red", "green", "white"];
 
+
+function isEqual(tile1, tile2) {
+    if ((tile1.suit == tile2.suit) && (tile1.value == tile2.value)) {
+        return true
+    }
+    return false
+}
+
+
 function checkValidTile (t) {
     if (suits.includes(t.suit)){
         switch (t.suit) {
@@ -25,7 +34,7 @@ function checkValidTile (t) {
                 if (windValues.includes(t.value)) { return true; }
                 break;
             case "dragon":  
-                if (dragonValues.includes(t.value )){ return true;}
+                if (dragonValues.includes(t.value)) { return true; }
                 break;
             case "flower":
                 if (t.value >= 1 && t.value <= 4) { return true; }   
